@@ -1,0 +1,66 @@
+import RPi.GPIO as GPIO
+import time 
+
+BUZZER_PIN = 14
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(BUZZER_PIN, GPIO.OUT)
+
+pwm = GPIO.PWM(BUZZER_PIN, 262)
+pwm.start(30)
+
+melody = [262, 294, 330, 349, 392, 440, 494, 523]
+
+try:
+    while True:
+            pwm.ChangeFrequency(melody[4])
+            time.sleep(0.5)
+            pwm.ChangeFrequency(melody[4])
+            time.sleep(0.5)
+            pwm.ChangeFrequency(melody[5])
+            time.sleep(0.5)
+            pwm.ChangeFrequency(melody[5])
+            time.sleep(0.5)
+            pwm.ChangeFrequency(melody[4])
+            time.sleep(0.5)
+            pwm.ChangeFrequency(melody[4])
+            time.sleep(0.5)
+            pwm.ChangeFrequency(melody[2])
+            time.sleep(1)
+            pwm.ChangeFrequency(melody[4])
+            time.sleep(0.5)
+            pwm.ChangeFrequency(melody[4])
+            time.sleep(0.5)
+            pwm.ChangeFrequency(melody[2])
+            time.sleep(0.5)
+            pwm.ChangeFrequency(melody[2])
+            time.sleep(0.5)
+            pwm.ChangeFrequency(melody[1])
+            time.sleep(1)
+            pwm.ChangeFrequency(melody[4])
+            time.sleep(0.5)
+            pwm.ChangeFrequency(melody[4])
+            time.sleep(0.5)
+            pwm.ChangeFrequency(melody[5])
+            time.sleep(0.5)
+            pwm.ChangeFrequency(melody[5])
+            time.sleep(0.5)
+            pwm.ChangeFrequency(melody[4])
+            time.sleep(0.5)
+            pwm.ChangeFrequency(melody[4])
+            time.sleep(0.5)
+            pwm.ChangeFrequency(melody[2])
+            time.sleep(1)
+            pwm.ChangeFrequency(melody[4])
+            time.sleep(0.5)
+            pwm.ChangeFrequency(melody[2])
+            time.sleep(0.5)
+            pwm.ChangeFrequency(melody[1])
+            time.sleep(0.5)
+            pwm.ChangeFrequency(melody[2])
+            time.sleep(0.5)
+            pwm.ChangeFrequency(melody[0])
+            time.sleep(1)
+
+finally:
+    pwm.stop()
+    GPIO.cleanup()
